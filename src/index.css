@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+/* Our design tokens. Tailwind turns each one into classes,
+   e.g. --color-ink becomes text-ink, bg-ink, border-ink. */
+@theme {
+  --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
+
+  /* Backgrounds */
+  --color-canvas: #f8faf9;       /* page background (off-white) */
+  --color-surface: #ffffff;      /* cards */
+
+  /* Text */
+  --color-ink: #0f172a;          /* headings (dark slate) */
+  --color-body: #334155;         /* normal text */
+  --color-muted: #475569;        /* secondary text */
+
+  /* Lines */
+  --color-line: #e2e8f0;         /* borders and dividers */
+
+  /* Teal accent */
+  --color-accent: #0f766e;       /* buttons, links */
+  --color-accent-strong: #115e59;/* hover state */
+  --color-accent-soft: #f0fdfa;  /* light teal background */
+}
+
+@layer base {
+  html {
+    color-scheme: light;
+    scroll-behavior: smooth;
+    scroll-padding-top: 5rem; /* keeps headings visible below the sticky header */
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    html {
+      scroll-behavior: auto;
+    }
+  }
+
+  body {
+    margin: 0;
+    background-color: var(--color-canvas);
+    color: var(--color-body);
+    font-family: var(--font-sans);
+    -webkit-font-smoothing: antialiased;
+  }
+
+  /* Clear keyboard focus ring for accessibility */
+  :focus-visible {
+    outline: 2px solid var(--color-accent);
+    outline-offset: 3px;
+  }
+}
