@@ -6,27 +6,31 @@
   --font-sans: "Inter Variable", ui-sans-serif, system-ui, sans-serif;
   --font-mono: "JetBrains Mono Variable", ui-monospace, Consolas, monospace;
 
-  /* Backgrounds */
-  --color-canvas: #f8faf9;       /* page background (off-white) */
-  --color-surface: #ffffff;      /* cards */
+  /* Dark Slate Backgrounds */
+  --color-canvas: #0b1120;          /* deep slate dark page background */
+  --color-surface: #0f172a;         /* cards and container panels */
+  --color-surface-hover: #1e293b;   /* card hover surface */
 
-  /* Text */
-  --color-ink: #0f172a;          /* headings (dark slate) */
-  --color-body: #334155;         /* normal text */
-  --color-muted: #475569;        /* secondary text */
+  /* Text Hierarchy */
+  --color-ink: #f8fafc;             /* headings and primary titles */
+  --color-body: #94a3b8;            /* primary body text */
+  --color-muted: #64748b;           /* secondary/muted text */
 
-  /* Lines */
-  --color-line: #e2e8f0;         /* borders and dividers */
+  /* Lines & Borders */
+  --color-line: #1e293b;            /* borders and dividers */
+  --color-line-light: #334155;      /* highlighted or card borders */
 
-  /* Teal accent */
-  --color-accent: #0f766e;       /* buttons, links */
-  --color-accent-strong: #115e59;/* hover state */
-  --color-accent-soft: #f0fdfa;  /* light teal background */
+  /* Brand Accents (Teal) */
+  --color-accent: #49BBBD;          /* primary accent */
+  --color-accent-strong: #3da1a3;   /* hover state for primary teal */
+  --color-accent-secondary: #2C7A7B;/* secondary teal accent */
+  --color-accent-soft: rgba(73, 187, 189, 0.12);   /* subtle teal badge background */
+  --color-accent-border: rgba(73, 187, 189, 0.25); /* subtle teal badge border */
 }
 
 @layer base {
   html {
-    color-scheme: light;
+    color-scheme: dark;
     scroll-behavior: smooth;
     scroll-padding-top: 5rem; /* keeps headings visible below the sticky header */
   }
@@ -45,7 +49,7 @@
     -webkit-font-smoothing: antialiased;
   }
 
-  /* Clear keyboard focus ring for accessibility */
+  /* Accessible keyboard focus ring matching primary teal */
   :focus-visible {
     outline: 2px solid var(--color-accent);
     outline-offset: 3px;
